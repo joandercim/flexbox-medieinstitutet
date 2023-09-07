@@ -1,0 +1,175 @@
+* {
+	box-sizing: border-box;
+}
+
+/** Not allowed to change this initial CSS code **/
+body {
+	background: url(../img/12_col.gif) center top repeat-y;
+	background-size: 90%;
+}
+
+/*************************************************/
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 20px 2%;
+}
+
+.min-height {
+	min-height: 10em;
+}
+
+#container {
+	width: 89.5%;
+	margin: 0 auto;
+}
+
+.border {
+	border: 1px solid;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	gap: 10px;
+	padding: 10px;
+}
+
+[class*=box] {
+	min-width: 25%;
+	min-height: 5em;
+	/* margin: 20px; */
+	flex-grow: 1;
+}
+
+aside {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 1em;
+}
+
+aside button {
+	margin: 5px 0;
+}
+
+aside, 
+header,
+main {
+	background-color: beige;
+}
+.col-2 {
+	grid-column: span 2;
+}
+
+.col-3 {
+	grid-column: span 3;
+}
+
+.col-8 {
+	grid-column: span 8;
+}
+
+.col-9 {
+	grid-column: span 9;
+}
+
+.col-12 {
+	grid-column: span 12;
+}
+
+#footer {
+	padding: 10px 1%;
+	display: grid;
+	grid-template-columns: subgrid;
+}
+
+.header-left {
+	width: 40%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+.header-right {
+	width: 40%;
+	display: flex;
+	justify-content: end;
+	padding-right: 2rem;
+}
+
+header button {
+	margin: 3em .5em;
+}
+
+header button:first-of-type {
+	margin-left: 2rem;
+}
+
+.header-right button {
+	justify-self: end;
+}
+
+
+@media screen and (max-width:1200px) {
+	.col-2 {
+		grid-column: span 3;
+	}
+
+	.col-8 {
+		grid-column: span 6;
+	}
+	
+	main .mobile {
+		min-width: 47%;
+	}
+
+@media screen and (max-width:960px) {
+	.col-2 {
+		grid-column: span 4;
+	}
+
+	.col-8 {
+		grid-column: span 4;
+	}
+
+	.col-9 {
+		grid-column: span 6;
+	}
+
+	.col-3 {
+		grid-column: span 6;
+	}
+
+	main .mobile {
+		min-width: 95%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.col-2 {
+		grid-column: span 12;
+	}
+
+	.col-8 {
+		grid-column: span 12;
+	}
+
+	.col-9 {
+		grid-column: span 12;
+	}
+
+	.col-3 {
+		grid-column: span 12;
+	}
+
+	main .mobile {
+		min-width: 95%;
+	}
+}
