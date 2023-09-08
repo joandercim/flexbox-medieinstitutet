@@ -21,12 +21,22 @@ body {
 }
 
 #container {
-	width: 89.5%;
+	width: 89%;
 	margin: 0 auto;
 }
 
-.border {
+section, 
+header,
+aside, 
+footer, 
+main {
 	border: 1px solid;
+}
+
+aside, 
+header,
+main {
+	background-color: beige;
 }
 
 header {
@@ -36,17 +46,15 @@ header {
 
 main {
 	display: flex;
-	justify-content: center;
 	flex-flow: row wrap;
 	gap: 10px;
 	padding: 10px;
 }
 
-[class*=box] {
-	min-width: 25%;
+main section {
 	min-height: 5em;
-	/* margin: 20px; */
 	flex-grow: 1;
+	flex-basis: 30%;
 }
 
 aside {
@@ -59,11 +67,6 @@ aside button {
 	margin: 5px 0;
 }
 
-aside, 
-header,
-main {
-	background-color: beige;
-}
 .col-2 {
 	grid-column: span 2;
 }
@@ -106,18 +109,15 @@ main {
 
 header button {
 	margin: 3em .5em;
+	min-width: 70px;
 }
 
 header button:first-of-type {
 	margin-left: 2rem;
 }
 
-.header-right button {
-	justify-self: end;
-}
 
-
-@media screen and (max-width:1200px) {
+@media (max-width:1200px) {
 	.col-2 {
 		grid-column: span 3;
 	}
@@ -126,11 +126,12 @@ header button:first-of-type {
 		grid-column: span 6;
 	}
 	
-	main .mobile {
+	main section {
 		min-width: 47%;
 	}
+}
 
-@media screen and (max-width:960px) {
+@media (max-width:960px) {
 	.col-2 {
 		grid-column: span 4;
 	}
@@ -147,12 +148,12 @@ header button:first-of-type {
 		grid-column: span 6;
 	}
 
-	main .mobile {
+	main section {
 		min-width: 95%;
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 	.col-2 {
 		grid-column: span 12;
 	}
@@ -169,7 +170,7 @@ header button:first-of-type {
 		grid-column: span 12;
 	}
 
-	main .mobile {
+	main section {
 		min-width: 95%;
 	}
 }
